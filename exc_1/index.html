@@ -7,11 +7,51 @@
     <title>Document</title>
   </head>
   <body>
-    <button type="button" id="but">PRESS HERE!</button>
+    <button type="button" id="but" onclick="guess()">PRESS HERE!</button>
     <script>
-      let num = prompt("Nhập số bao ngoài: ");
-      let xman = Math.floor(Math.radom() * num);
-      let guess = prompt("Nhập số đoán: ");
+      function guess() {
+        let min = 1,
+          max = 100;
+        // let min = prompt("Nhập khoảng min: ");
+        // let max = prompt("Nhập khoảng max: ");
+        let xman = Math.floor(Math.radom() * 100);
+        console.log(xman);
+        let guess = prompt("Nhập số đoán: ");
+        do {
+          if (guess == xman) {
+            alert("Chúc mừng bạn đã đoán đúng!");
+          } else if (guess > xman) {
+            guess = max;
+            alert("Bạn đoán nhầm rồi, đoán lại nhé!");
+          } else if (guess < xman) {
+            guess = min;
+            alert("Bạn đoán nhầm rồi đoán lại nhé");
+          }
+        } while (guess !== xman);
+      }
     </script>
+    <!-- <script>
+      let min = 1,
+        max = 100;
+      let guess = 0;
+      let keyword = Math.round(Math.random() * 99 + 1); // 1.0 - 100.0
+      console.log(keyword);
+      do {
+        guess = parseInt(prompt("You guess: [" + min + " - " + max + "]"));
+        if (guess < keyword) {
+          if (min < guess) {
+            // guess should bigger than min
+            min = guess;
+          }
+        } else if (guess > keyword) {
+          if (max > guess) {
+            // guess should smaller than max
+            max = guess;
+          }
+        } else {
+          alert("You right! keyword = " + keyword);
+        }
+      } while (guess != keyword);
+    </script> -->
   </body>
 </html>
