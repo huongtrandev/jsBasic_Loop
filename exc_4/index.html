@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <table id="mul-table"></table>
+    <script>
+      let tab = "<tr>";
+      let col, row;
+      for (let row = 1; row <= 9; row++) {
+        for (let col = 2; col <= 9; col++) {
+          tab += "<td>" + col + "x" + row + "=" + row * col + "</td>";
+        }
+        tab += "</tr><tr>";
+      }
+      document.getElementById("mul-table").innerHTML = tab;
+    </script>
+    <!-- <body>
+      <table
+        border="1"
+        cellspacing="0"
+        cellpadding="0"
+        id="integer-table"
+      ></table>
+      <script>
+        let table = "<tr>";
+        for (let row = 1; row <= 10; row++) {
+          // 2
+          for (let col = 1; col <= 10; col++) {
+            // col 1 -10
+            table += "<td class='p-3 text-center'>" + row * col + "</td>";
+          }
+          table += "</tr><tr>";
+        }
+        table += "</tr>";
+        document.getElementById("integer-table").innerHTML = table;
+      </script>
+    </body> -->
+  </body>
+</html>
