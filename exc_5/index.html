@@ -9,13 +9,54 @@
   <body>
     <table id="star"></table>
     <script>
-      let tri = 5;
+      let tri = 6;
       for (let i = 0; i < tri; i++) {
+        console.log(i);
+        for (let k = 0; k < i; k++) {
+          console.log(k);
+          document.write("*");
+          // Bắt đầu từ K = 0, chạy lệnh document.write("*"),
+          // so sánh k với i, nếu k vẫn nhỏ hơn i thì tăng k lên 1 đơn vị,
+          //  nếu k >= i thì kết thúc vòng lặp
+          // bắt đầu chạy tiếp vòng lặp ngoài, tăng i lên 1 đơn vị, sau đó chạy tiếp vòng lặp
+          // vòng lặp ngoài mỗi lần lặp 1 lần thì vòng lặp trong sẽ chạy từ đầu đến cuối
+          // vậy vòng lặp đầu tiên thì kết thúc luôn
+        }
+        document.write("<br/>");
+      }
+      document.write("<br/>");
+      for (let i = tri; i > 0; i--) {
         // console.log(i);
-        // for (let k = 0; k < i; k++) {
-        document.write("*");
-        // }
         // document.write("<br/>");
+        // cho vòng lặp chạy ngược lại sẽ ra kết quả của đoạn code này
+        for (let k = i - 1; k > 0; k--) {
+          document.write("*");
+        }
+        document.write("<br/>");
+      }
+      // nếu muốn in ra tam giác vuông ở góc phải bên dưới thì kết hợp với cấu trúc điều kiện
+      for (let j = 0; j < tri; j++) {
+        for (let h = 0; h < tri; h++) {
+          // console.log(h);
+          if (h < tri - j) {
+            document.write("&nbsp&nbsp");
+          } else {
+            document.write("*");
+          }
+        }
+        document.write("<br />");
+      }
+      document.write("<br/>");
+      for (let j = 0; j < tri; j++) {
+        for (let h = tri; h > 0; h--) {
+          // console.log(h);
+          if (tri - j > h) {
+            document.write("*");
+          } else {
+            document.write("&nbsp&nbsp");
+          }
+        }
+        document.write("<br />");
       }
     </script>
   </body>
